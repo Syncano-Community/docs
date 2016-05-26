@@ -1,42 +1,7 @@
----
-title: "Data Object"
-excerpt: ""
----
-Chapter sections:
-1. [Overview]()
-2. [Examples]()
 
-[block:api-header]
-{
-  "type": "basic",
-  "title": "Overview"
-}
-[/block]
-[block:parameters]
-{
-  "data": {
-    "0-0": "`none`",
-    "1-0": "`read`",
-    "2-0": "`write`",
-    "3-0": "`full`",
-    "h-0": "Permission Type",
-    "h-1": "Description",
-    "1-1": "Grants the capability to read the Data Object.",
-    "2-1": "Grants the capability to read and write the Data Object.",
-    "3-1": "Grants read/write permissions plus the possibility of deleting the Data Object.",
-    "0-1": "Default mode where users don't have access to the Data Object."
-  },
-  "cols": 2,
-  "rows": 4
-}
-[/block]
 
-[block:api-header]
-{
-  "type": "basic",
-  "title": "Examples"
-}
-[/block]
+### Examples
+
 If you never dealt with UNIX file system permissions, the concept might be a bit vague at first. We'll try to explain with a couple of examples. Let's consider 3 scenarios, when a User with an `id` = 123 will be able to read a Data Object with an `id`=1: 
 1. If a User is an `owner` and `owner_permissions` is `read` or higher (`write` or `full`), this is how the Data Object permission properties will look (non-permission properties removed for clarity):
 [block:code]
@@ -73,13 +38,7 @@ If our user belonged to a Group with `id` 321, then this is how the Data Object 
 }
 [/block]
 
-[block:callout]
-{
-  "type": "warning",
-  "body": "If a Data Object has `other_permissions` = `full`, it overrides all other permissions completely. So even if a user is not an `owner` and not in a  `group` connected with the Data Object, the user will still have access to a Data Object where `other_permissions` = `full`. Same rule applies to Classes and Channels."
-}
-[/block]
- ### Creating a Data Object with an `owner_permissions` example
+### Creating a Data Object with an `owner_permissions` example
 [block:callout]
 {
   "type": "info",

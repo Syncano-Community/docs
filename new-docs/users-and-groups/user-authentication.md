@@ -197,7 +197,6 @@ Backend names:
   "title": "Resetting a User Key"
 }
 [/block]
-## Link to permissions here
 ### When to reset a User Key
 Usually you would like to reset a User Key in two situations:
 - When the User Key was compromised 
@@ -211,39 +210,4 @@ Because by knowing username and password, one can obtain User Key through [Users
 If for whatever reason your users username, password, or User Key gets leaked ask them to change their password and reset their User Key right away!
 
 ### How to reset the User Key:
-This is how you can reset the User Key by a call to Syncano API:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n-H \"X-API-KEY: <API_KEY>\" \\\n-H \"Content-Type: application/json\" \\\n\"https://api.syncano.io/v1.1/instances/<instance_name>/users/<user_id>/reset_key/\"",
-      "language": "curl"
-    },
-    {
-      "code": "var Syncano = require(\"syncano\");\nvar connection = Syncano({accountKey: \"ACCOUNT_KEY\"});\nvar User = connection.User;\n\nUser.please().resetKey({instanceName: INSTANCE_NAME, id: 7}).then(callback);",
-      "language": "javascript"
-    },
-    {
-      "code": "from syncano.models import *\nimport syncano\n\nsyncano.connect(api_key=\"ACCOUNT_KEY\")\n\nthe_user = User.please.get(\n    instance_name=\"INSTANCE_NAME\",\n    id=USER_ID\n)\n\nthe_user.reset_key()",
-      "language": "python",
-      "name": "Python"
-    },
-    {
-      "code": "syncano.setUser(null);",
-      "language": "java",
-      "name": "Android"
-    },
-    {
-      "code": "",
-      "language": "objectivec",
-      "name": ""
-    },
-    {
-      "code": "",
-      "language": "objectivec",
-      "name": "Swift"
-    }
-  ]
-}
-[/block]
-The result will be a User object with an updated `user_key` field.
+## Link to permissions here
